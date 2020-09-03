@@ -1,7 +1,7 @@
 /*
  * @Author: zhangyong
  * @Date: 2020-08-05 14:55:31
- * @LastEditTime: 2020-08-25 18:50:15
+ * @LastEditTime: 2020-08-28 17:30:04
  * @LastEditors: zhangyong
  * @Description: 
  */
@@ -27,7 +27,7 @@ const router = require('./routes')
 //   }
 // })
 
-app.use(cors())
+app.use(cors()) // 跨域处理(允许所有的请求跨域)
 app.use(router.routes(), router.allowedMethods())
 
 app.listen(3000)

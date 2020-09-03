@@ -1,7 +1,7 @@
 /*
  * @Author: zhangyong
  * @Date: 2020-08-21 16:03:06
- * @LastEditTime: 2020-08-25 17:33:48
+ * @LastEditTime: 2020-08-28 16:55:52
  * @LastEditors: zhangyong
  * @Description:
  */
@@ -31,8 +31,8 @@ router.get("/download", function (ctx, next) {
     data.push(arr);
   }
   data.unshift(_headers);
-  // 数据格式为[["hello","223"],["22","23"]];
-  let buffer = NXlSX.build([{ name: "sheetName", data: data }]);
+  // 数据格式为[["序号", "姓名", "年龄", "省", "市", "区"],["hello","223"],["22","23"]];
+  let buffer = NXlSX.build([{ name: "sheet1", data: data }]);
   ctx.set('Content-Type', 'application/vnd.openxmlformats');
   ctx.set("Content-Disposition", "attachment; filename=" + "Report.xlsx");
   // 返回buffer流到前端
